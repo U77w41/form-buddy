@@ -36,7 +36,7 @@ const PdfCompressor = () => {
       setCompressedSize(pdfBytes.length);
       setDone(true);
 
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
       a.download = "compressed.pdf";

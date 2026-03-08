@@ -50,7 +50,7 @@ const PdfSplitter = () => {
       copied.forEach((p) => newPdf.addPage(p));
 
       const pdfBytes = await newPdf.save();
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
       a.download = "split.pdf";
