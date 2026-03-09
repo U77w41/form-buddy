@@ -23,7 +23,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/passport-photo" element={<PassportPhoto />} />
@@ -38,7 +38,7 @@ const App = () => (
           <Route path="/pdf-compressor" element={<PdfCompressor />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
